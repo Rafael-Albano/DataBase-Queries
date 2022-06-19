@@ -27,7 +27,8 @@ export class GamesRepository implements IGamesRepository {
     return this.repository
       .createQueryBuilder("games")
       .where("games.id = :id", {id})
-      .relation(Game, "users").of(id).loadMany();
+      .relation(Game, "users")
+      .of(id).loadMany();
       // Complete usando query builder
   }
 }
